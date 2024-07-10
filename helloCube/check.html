@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check WebGL Support</title>
+  </head>
+  <body>
+    <script>
+      function isWebGLAvailable() {
+        try {
+          const canvas = document.createElement("canvas");
+          return !!window.WebGLRenderingContext && !!canvas.getContext("webgl");
+        } catch (e) {
+          return false;
+        }
+      }
+
+      if (isWebGLAvailable()) {
+        document.body.innerHTML = "WebGL is supported!";
+      } else {
+        document.body.innerHTML = "WebGL is not supported!";
+      }
+    </script>
+  </body>
+</html>
